@@ -18,10 +18,6 @@ spec:
         image: 135263545957.dkr.ecr.us-east-1.amazonaws.com/myrepo:appimage
         ports:
         - containerPort: 80
-        # ConfigMap integration
-        envFrom:
-        - configmapRef:
-             name: BB-ConfigMap
         # ResourceQuota integration
         resources:
           requests:
