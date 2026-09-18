@@ -1,8 +1,0 @@
----
-apiVersion: v1
-kind: ConfigMap
-metadata: 
-  name: BB-ConfigMap
-data:
-  DB-HOST: mysqldb
-  DB-port: "3306"
