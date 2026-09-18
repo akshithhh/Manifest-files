@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: BB-Deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: BB-App
+  template:
+    metadata:
+      labels:
+        app: BB-App
+    spec:
+      containers:
+      - name: BB-Container
+        image: 135263545957.dkr.ecr.us-east-1.amazonaws.com/myrepo:appimage
+        ports:
+        - containerPort: 80
+        # ConfigMap integration
+        envFrom:
+        - configmapRef:
+             name: BB-ConfigMap
+        # ResourceQuota integration
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"  
+        # probe configuration
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          intialDelaySeconds: 30
+          periodSeconds: 5
+        ReadinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          intialDelaySeconds: 10
+          periodSeconds: 5
