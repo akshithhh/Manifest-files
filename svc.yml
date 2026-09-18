@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: BB-Service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: BB-App   
   ports:
