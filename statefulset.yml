@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: statefulset
+metadata:
+  name: BB-Deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: BB-App
+  template:
+    metadata:
+      labels:
+        app: BB-App
+    spec:
+      containers:
+      - name: BB-Container
+        image: 
+        ports:
+        - containerPort: 80
+        
