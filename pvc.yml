@@ -1,11 +1,10 @@
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: BB-PVC
+  name: bb-pvc
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1G
+      storage: 1Gi
