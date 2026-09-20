@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: bb-stateful-container
-          image: 
+          image: 465760686497.dkr.ecr.us-east-1.amazonaws.com/myrepo:dbimage
 
           ports:
             - containerPort: 80
