@@ -1,21 +1,23 @@
----
 apiVersion: apps/v1
-kind: statefulset
+kind: StatefulSet
 metadata:
-  name: BB-Deployment
+  name: bb-statefulset
 spec:
+  serviceName: bb-statefulset
   replicas: 3
+
   selector:
     matchLabels:
-      app: BB-App
+      app: bb-stateful-app
+
   template:
     metadata:
       labels:
-        app: BB-App
+        app: bb-stateful-app
+
     spec:
       containers:
-      - name: BB-Container
-        image: 
-        ports:
-        - containerPort: 80
-        
+        - name: bb-stateful-container
+          image: 135263545957.dkr.ecr.us-east-1.amazonaws.com/myrepo:dbimage
+          ports:
+            - containerPort: 80
