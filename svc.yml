@@ -1,12 +1,12 @@
----
 apiVersion: v1
 kind: Service
 metadata:
-  name: BB-Service
+  name: bb-service
 spec:
   type: LoadBalancer
   selector:
-    app: BB-App   
+    app: bb-app
+
   ports:
-     - port: 80
+    - port: 80
       targetPort: 80
