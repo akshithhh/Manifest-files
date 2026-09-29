@@ -5,7 +5,7 @@ metadata:
 
 spec:
   serviceName: bb-statefulset
-  replicas: 1
+  replicas: 3
 
   selector:
     matchLabels:
@@ -23,3 +23,11 @@ spec:
 
           ports:
             - containerPort: 3306
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
