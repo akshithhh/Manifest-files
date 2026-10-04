@@ -5,7 +5,7 @@ metadata:
 
 spec:
   serviceName: bb-statefulset
-  replicas: 3
+  replicas: 1
 
   selector:
     matchLabels:
